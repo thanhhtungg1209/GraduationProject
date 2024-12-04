@@ -1,0 +1,18 @@
+[
+  {
+    "email": "ducth@example.com",
+    "password": "12345678aA@"
+  },
+  {
+    "email": "invalidemail",
+    "password": "12345678aA@"
+  },
+  {
+    "email": "ducth29@example.com",
+    "password": "12345"
+  },
+  {
+    "email": "",
+    "password": ""
+  }
+]
