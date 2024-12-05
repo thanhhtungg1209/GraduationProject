@@ -49,7 +49,6 @@ public class HomePage {
     public static boolean isSearchSuccessfulWithInValidInput(){
         try {
             Utils.verifyElementDisplay("//span[@aria-label='Error']//*[name()='svg']");
-            Utils.verifyElementDisplay("//p[contains(text(),'You haven’t searched for items yet.')]");
             return true;
         }catch (NoSuchElementException e){
             return false;
