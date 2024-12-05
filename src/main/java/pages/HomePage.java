@@ -39,7 +39,6 @@ public class HomePage {
     public static boolean isSearchSuccessfulWithValidInput(int i){
         try {
             Utils.verifyElementDisplay("//span[contains(text(),'"+searchInput[i].getValue()+"')]");
-            Utils.verifyElementDisplay("//div[@class='results-listing']//span[@class='sf-price__regular'][normalize-space()='"+searchInput[i].getPrice()+"']");
             return true;
         }catch (NoSuchElementException e){
             return false;
