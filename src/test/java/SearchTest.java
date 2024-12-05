@@ -17,7 +17,7 @@ public class SearchTest extends BaseTest {
     @Test(priority = 1, description = "Kiểm tra xem sản phẩm hiển thị đúng khi tìm kiếm bằng từ khóa chính xác")
     public void TKSP_1(){
         methodCount=1; int i=0;
-        HomePage.search(i);
+        HomePage.searchName(i);
         Assert.assertTrue(HomePage.isSearchSuccessfulWithValidInput(i));
     }
 
@@ -25,7 +25,7 @@ public class SearchTest extends BaseTest {
     public void TKSP_2(){
         methodCount=2; int i=1;
         Utils.refresh();
-        HomePage.search(i);
+        HomePage.searchName(i);
         Assert.assertTrue(HomePage.isSearchSuccessfulWithInValidInput());
     }
 
@@ -33,7 +33,7 @@ public class SearchTest extends BaseTest {
     public void TKSP_3(){
         methodCount=3; int i=2;
         Utils.refresh();
-        HomePage.search(i);
+        HomePage.searchName(i);
         Assert.assertTrue(HomePage.isSearchSuccessfulWithInValidInput());
     }
 
@@ -41,7 +41,7 @@ public class SearchTest extends BaseTest {
     public void TKSP_4(){
         methodCount=4; int i=3;
         Utils.refresh();
-        HomePage.search(i);
+        HomePage.searchDescription(i);
         Assert.assertTrue(HomePage.isSearchSuccessfulWithValidInput(i));
     }
 
@@ -49,7 +49,7 @@ public class SearchTest extends BaseTest {
     public void TKSP_5(){
         methodCount=5; int i=4;
         Utils.refresh();
-        HomePage.search(i);
+        HomePage.searchDescription(i);
         Assert.assertTrue(HomePage.isSearchSuccessfulWithValidInput(i));
     }
 
@@ -57,7 +57,7 @@ public class SearchTest extends BaseTest {
     public void TKSP_6(){
         methodCount=6; int i=5;
         Utils.refresh();
-        HomePage.search(i);
+        HomePage.searchName(i);
         Assert.assertTrue(HomePage.isSearchSuccessfulWithInValidInput());
     }
 
@@ -65,7 +65,7 @@ public class SearchTest extends BaseTest {
     public void TKSP_7(){
         methodCount=7; int i=6;
         Utils.refresh();
-        HomePage.search(i);
+        HomePage.searchName(i);
         Assert.assertTrue(HomePage.isSearchSuccessfulWithValidInput(3));
         Assert.assertTrue(HomePage.isSearchSuccessfulWithValidInput(7));
     }

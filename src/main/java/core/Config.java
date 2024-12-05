@@ -9,7 +9,15 @@ package core;
 public class Config {
     private String baseUrl;
     private String email,firstName,lastName,password;
-    private String value;
+    private String value,price,description;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public String getPrice() {
         return price;
@@ -18,8 +26,6 @@ public class Config {
     public void setPrice(String price) {
         this.price = price;
     }
-
-    private String price;
 
     public String getEmail() {
         return email;

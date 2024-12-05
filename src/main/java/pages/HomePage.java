@@ -29,8 +29,15 @@ public class HomePage {
      * Search
      * @param i
      */
-    public static void search(int i){
+    public static void searchName(int i){
         driver.findElement(By.xpath("//input[@name='search']")).sendKeys(searchInput[i].getValue());
+        Utils.sleep(2);
+        driver.findElement(By.xpath("//input[@name='search']")).sendKeys(Keys.ENTER);
+        Utils.sleep(2);
+    }
+
+    public static void searchDescription(int i){
+        driver.findElement(By.xpath("//input[@name='search']")).sendKeys(searchInput[i].getDescription());
         Utils.sleep(2);
         driver.findElement(By.xpath("//input[@name='search']")).sendKeys(Keys.ENTER);
         Utils.sleep(2);
