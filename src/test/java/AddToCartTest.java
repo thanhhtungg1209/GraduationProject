@@ -59,7 +59,7 @@ public class AddToCartTest extends BaseTest {
     public void TSPVGH_4(){
         methodCount =4; int i=0;
         HomePage.goToPage();
-        HomePage.search(i);
+        HomePage.searchName(i);
         ProductDetailPage.navigateToProductDetailByName(i);
         ProductDetailPage.selectColorProduct("#1857f7");
         ProductDetailPage.selectSizeProduct("32");
