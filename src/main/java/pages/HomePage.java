@@ -36,9 +36,20 @@ public class HomePage {
         Utils.sleep(2);
     }
 
-    public static boolean checkSearchSuccess(int i){
+    public static boolean isSearchSuccessfulWithValidInput(int i){
         try {
             Utils.verifyElementDisplay("//span[contains(text(),'"+searchInput[i].getValue()+"')]");
+            Utils.verifyElementDisplay("//div[@class='results-listing']//span[@class='sf-price__regular'][normalize-space()='"+searchInput[i].getPrice()+"']");
+            return true;
+        }catch (NoSuchElementException e){
+            return false;
+        }
+    }
+
+    public static boolean isSearchSuccessfulWithInValidInput(){
+        try {
+            Utils.verifyElementDisplay("//span[@aria-label='Error']//*[name()='svg']");
+            Utils.verifyElementDisplay("//p[contains(text(),'You haven’t searched for items yet.')]");
             return true;
         }catch (NoSuchElementException e){
             return false;

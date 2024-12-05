@@ -11,6 +11,16 @@ public class Config {
     private String email,firstName,lastName,password;
     private String value;
 
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    private String price;
+
     public String getEmail() {
         return email;
     }

@@ -1,8 +1,37 @@
 [
   {
-    "value": "Aether Gym Pant"
+    "number": "0",
+    "value": "Aether Gym Pant",
+    "price": "$74.00"
   },
   {
-    "value": "!@3$%"
+    "number": "1",
+    "value": "ass"
+  },
+  {
+    "number": "2",
+    "value": "!@#$%^&*()-"
+  },
+  {
+    "number": "3",
+    "value": "Erika Running Short",
+    "description": "A great short with a body-hugging design, the Erika Running Short is perfect for runners who prefer a fitted short rather than the traditional baggy variety."
+  },
+  {
+    "number": "4",
+    "value": "erika running short",
+    "description": "A great short with a body-hugging design, the Erika Running Short is perfect for runners who prefer a fitted short rather than the traditional baggy variety."
+  },
+  {
+    "number": "5",
+    "value": "erika running short"
+  },
+  {
+    "number": "6",
+    "value": "short"
+  },
+  {
+    "number": "7",
+    "value": "Pierce Gym Short"
   }
 ]
