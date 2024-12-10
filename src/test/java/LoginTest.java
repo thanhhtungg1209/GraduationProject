@@ -11,7 +11,11 @@ import pages.LoginPage;
 import java.util.Arrays;
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class LoginTest extends BaseTest {
+    private static final Logger log = LogManager.getLogger(LoginTest.class);
     private static int methodCount;
 
     @BeforeClass
@@ -19,13 +23,16 @@ public class LoginTest extends BaseTest {
         LoginPage loginPage = new LoginPage(driver);
         Utils utils = new Utils(driver);
         LoginPage.goToPage();
+        log.info("Test case started");
     }
 
     @Test(priority = 1, description = "Đảm bảo người dùng có thể đăng nhập thành công khi cung cấp thông tin hợp lệ")
     public void DN_1(){
         methodCount = 1;int i=0;
+        log.info("Starting test case: DN_1");
         LoginPage.login(i);
         Assert.assertTrue(LoginPage.checkLoginSuccess());
+        log.info("Test case DN_1 passed");
     }
 
     @Test(priority = 2, description = "Đảm bảo hệ thống không cho phép đăng nhập với địa chỉ email không hợp lệ.")
