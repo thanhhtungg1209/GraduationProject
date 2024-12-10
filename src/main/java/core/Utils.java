@@ -38,7 +38,7 @@ public class Utils extends BaseTest{
     /**
      *  Wait for element visible
      * @param by
-     * @param timeout
+     * @param timeout: thời gian tối đa có thể chờ để phần tử hiển thị trong DOM
      */
     public static void waitForElementVisible(By by, int timeout) {
         try {
@@ -53,7 +53,7 @@ public class Utils extends BaseTest{
     /**
      *  Wait for element clickable
      * @param by
-     * @param timeout
+     * @param timeout:thời gian tối đa có thể chờ để phần tử hiển thị trong DOM và có thể click
      */
     public static void waitForElementClickable(By by, int timeout) {
         try {
