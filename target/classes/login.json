@@ -12,6 +12,10 @@
     "password": "12345"
   },
   {
+    "email": "ducth1112@example.com",
+    "password": "12345"
+  },
+  {
     "email": "",
     "password": ""
   }

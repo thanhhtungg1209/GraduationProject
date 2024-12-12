@@ -1,8 +1,23 @@
 [
   {
+    "number": 0,
     "email": "ducth@example.com",
     "firstName": "Duc",
     "lastName": "Ta",
     "password": "12345678aA@"
+  },
+  {
+    "number": 1,
+    "email": "ducth@",
+    "firstName": "Duc",
+    "lastName": "Ta",
+    "password": "12345678aA@"
+  },
+  {
+    "number": 2,
+    "email": "nguyendinhduy@example.com",
+    "firstName": "Duc",
+    "lastName": "Ta",
+    "password": "12"
   }
 ]
