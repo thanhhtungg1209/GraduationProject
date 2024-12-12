@@ -2,6 +2,7 @@ import core.BaseTest;
 import core.Utils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -39,8 +40,10 @@ public class LoginTest extends BaseTest {
     public void DN_2(){
         methodCount = 2;int i=1;
         Utils.refresh();
+        log.info("Starting test case: DN_2");
         LoginPage.login(i);
         Assert.assertTrue(LoginPage.checkInvalidEmailError());
+        log.info("Test case DN_2 passed");
     }
 
     @Test(priority = 3, description = "Đảm bảo hệ thống không cho phép đăng nhập khi mật khẩu không đúng")
@@ -72,7 +75,8 @@ public class LoginTest extends BaseTest {
         List<Integer> methodCounts = Arrays.asList(1);
         if (methodCounts.contains(methodCount)){
             JavascriptExecutor js = (JavascriptExecutor) driver;
-            js.executeScript("arguments[0].click();",driver.findElement(By.xpath("//span[normalize-space()='Log out']")));
+            WebElement logOut = driver.findElement(By.xpath("//span[normalize-space()='Log out']"));
+            js.executeScript("arguments[0].click();",logOut);
             Utils.sleep(2);
         }
     }
