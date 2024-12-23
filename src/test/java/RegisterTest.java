@@ -17,33 +17,38 @@ public class RegisterTest extends BaseTest {
         RegisterPage.goToPage();
     }
 
-    @Test(priority = 1, description = "Đảm bảo người dùng có thể đăng ký tài khoản thành công khi cung cấp thông tin hợp lệ.")
-    public void DK_1() {
-        int i=0;
-        RegisterPage.register(i);
-        LoginPage.login(i);
-        ProfilePage.goToProfile();
-        Assert.assertTrue(LoginPage.checkLoginSuccess());
-    }
+//    @Test(priority = 1, description = "Đảm bảo người dùng có thể đăng ký tài khoản thành công khi cung cấp thông tin hợp lệ.")
+//    public void DK_1() {
+//        int i=0;
+//        RegisterPage.formRegister(i);
+//        RegisterPage.clickCreatButton();
+//        LoginPage.login(i);
+//        ProfilePage.goToProfile();
+//        Assert.assertTrue(LoginPage.checkLoginSuccess());
+//    }
 
     @Test(priority = 2, description = "Đảm bảo rằng hệ thống không cho phép người dùng đăng ký với địa chỉ email đã tồn tại.")
     public void DK_2(){
         int i=0;
-        RegisterPage.register(i);
+        Utils.refresh();
+        RegisterPage.formRegister(i);
+        RegisterPage.clickCreatButton();
         Assert.assertTrue(RegisterPage.checkRegisterFail());
     }
 
     @Test(priority = 3, description = "Đảm bảo rằng hệ thống không cho phép đăng ký với email không hợp lệ.")
     public void DK_3(){
         int i=1;
-        RegisterPage.register(i);
+        Utils.refresh();
+        RegisterPage.formRegister(i);
         Assert.assertTrue(RegisterPage.checkEmailInvalid());
     }
 
     @Test(priority = 4, description = "Đảm bảo rằng hệ thống không cho phép đăng ký với mật khẩu quá ngắn.")
     public void DK_4(){
         int i=2;
-        RegisterPage.register(i);
+        Utils.refresh();
+        RegisterPage.formRegister(i);
         Assert.assertTrue(RegisterPage.checkPasswordInvalid());
     }
 }

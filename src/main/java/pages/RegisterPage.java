@@ -28,9 +28,9 @@ public class RegisterPage {
     }
 
     /**
-     * Đăng ký tài khoản
+     * Nhập thông tin form Đăng ký tài khoản
      */
-    public static void register(int i) {
+    public static void formRegister(int i) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();",driver.findElement(By.xpath("//button[@aria-label='Account']//span[@aria-label='Account']")));
         Utils.sleep(2);
@@ -46,8 +46,15 @@ public class RegisterPage {
         driver.findElement(By.xpath(passwordXpath)).sendKeys(registerConfigs[i].getPassword());
         driver.findElement(By.xpath("//span[contains(text(),'Sign Up for Newsletter')]")).click();
         driver.findElement(By.xpath("//span[contains(text(),'I want to create an account')]")).click();
-        Utils.waitForElementVisible(By.xpath(createButtonXpath), 10);
-        driver.findElement(By.xpath(createButtonXpath)).click();
+    }
+
+    /**
+     * Click button Creat
+     */
+    public static void clickCreatButton(){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        WebElement creatButton = driver.findElement(By.xpath(createButtonXpath));
+        js.executeScript("arguments[0].click();",creatButton);
     }
 
     /**
@@ -69,7 +76,7 @@ public class RegisterPage {
      */
     public static boolean checkEmailInvalid(){
         try{
-            Utils.verifyElementDisplay("//div[contains(text(),'The email field must be a valid email')]");
+            Utils.verifyElementDisplay("//div[contains(text(),'Invalid email')]");
             return true;
         }catch (NoSuchElementException e){
             return false;

@@ -27,7 +27,7 @@ public class LoginTest extends BaseTest {
         log.info("Test case started");
     }
 
-    @Test(priority = 1, description = "Đảm bảo người dùng có thể đăng nhập thành công khi cung cấp thông tin hợp lệ")
+    @Test(priority = 1,description = "Đảm bảo người dùng có thể đăng nhập thành công khi cung cấp thông tin hợp lệ")
     public void DN_1(){
         methodCount = 1;int i=0;
         log.info("Starting test case: DN_1");
@@ -36,7 +36,7 @@ public class LoginTest extends BaseTest {
         log.info("Test case DN_1 passed");
     }
 
-    @Test(priority = 2, description = "Đảm bảo hệ thống không cho phép đăng nhập với địa chỉ email không hợp lệ.")
+    @Test(priority = 2,description = "Đảm bảo hệ thống không cho phép đăng nhập với địa chỉ email không hợp lệ.")
     public void DN_2(){
         methodCount = 2;int i=1;
         Utils.refresh();
@@ -46,7 +46,7 @@ public class LoginTest extends BaseTest {
         log.info("Test case DN_2 passed");
     }
 
-    @Test(priority = 3, description = "Đảm bảo hệ thống không cho phép đăng nhập khi mật khẩu không đúng")
+    @Test(priority = 3,description = "Đảm bảo hệ thống không cho phép đăng nhập khi mật khẩu không đúng")
     public void DN_3(){
         methodCount = 3;int i=2;
         Utils.refresh();
@@ -54,7 +54,7 @@ public class LoginTest extends BaseTest {
         Assert.assertTrue(LoginPage.checkInvalidPasswordError());
     }
 
-    @Test(priority = 4, description = "Đảm bảo hệ thống không cho phép đăng nhập khi cả email và mật khẩu đều sai.")
+    @Test(priority = 4,description = "Đảm bảo hệ thống không cho phép đăng nhập khi cả email và mật khẩu đều sai.")
     public void DN_4(){
         methodCount = 4; int i=3;
         Utils.refresh();
