@@ -23,10 +23,10 @@ import java.time.Duration;
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(40));
     }
 
-    @AfterClass
-    public void tearDown() {
-        if (driver != null) {
-            driver.quit();
-        }
-    }
+//    @AfterClass
+//    public void tearDown() {
+//        if (driver != null) {
+//            driver.quit();
+//        }
+//    }
 }

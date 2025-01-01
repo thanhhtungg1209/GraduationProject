@@ -19,5 +19,47 @@
     "firstName": "Duc",
     "lastName": "Ta",
     "password": "12"
+  },
+  {
+    "number": 3,
+    "email": "nguyendinhduy@example.com",
+    "firstName": "",
+    "lastName": "Ta",
+    "password": "12345678aA@"
+  },
+  {
+    "number": 4,
+    "email": "nguyendinhduy@example.com",
+    "firstName": "Duc",
+    "lastName": "",
+    "password": "12345678aA@"
+  },
+  {
+    "number": 5,
+    "email": "",
+    "firstName": "Duc",
+    "lastName": "Ta",
+    "password": "12345678aA@"
+  },
+  {
+    "number": 6,
+    "email": "nguyendinhduynguyendinhduynguyendinhduynguyendinhduynguyendinhduynguyendinhduynguyendinhduynguyendinhduynguyendinhduynguyendinhduynguyendinhduynguyendinhduynguyendinhduynguyendinhduynguyendinhduynguyendinhduynguyen@example.com",
+    "firstName": "Duc",
+    "lastName": "Ta",
+    "password": "12345678aA@"
+  },
+  {
+    "number": 7,
+    "email": "nguyendinhduy@example.com",
+    "firstName": "Duc",
+    "lastName": "Ta",
+    "password": "abc!@Aabc!@Aabc!@A@Aabc!@Aabc!@Aabc!@Aabc!@Aabc!@Aabc!@Aabc!@Aabc!@Aabc!@Aabc!@Aabc!@Aabc!@Aabc!@Aabc!@Aabc!@Aabc!@Aabc!@Aabc!@A#"
+  },
+  {
+    "number": 8,
+    "email": "nguyendinhduyexample.com",
+    "firstName": "Duc",
+    "lastName": "Ta",
+    "password": "12345678aA@"
   }
 ]

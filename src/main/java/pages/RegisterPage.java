@@ -95,4 +95,17 @@ public class RegisterPage {
             return false;
         }
     }
+
+    /**
+     * Check This field is required
+     * @return
+     */
+    public static boolean checkRequiredField(){
+        try{
+            Utils.verifyElementDisplay("//div[contains(text(),'This field is required')]");
+            return true;
+        }catch (NoSuchElementException e){
+            return false;
+        }
+    }
 }

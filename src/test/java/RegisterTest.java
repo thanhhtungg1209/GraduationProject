@@ -51,4 +51,52 @@ public class RegisterTest extends BaseTest {
         RegisterPage.formRegister(i);
         Assert.assertTrue(RegisterPage.checkPasswordInvalid());
     }
+
+    @Test(priority = 5, description = "Đảm bảo không cho phép đăng ký nếu trường First Name để trống hoặc nhập toàn space")
+    public void DK_5(){
+        int i=3;
+        Utils.refresh();
+        RegisterPage.formRegister(i);
+        Assert.assertTrue(RegisterPage.checkRequiredField());
+    }
+
+    @Test(priority = 6, description = "Đảm bảo không cho phép đăng ký nếu trường Last Name để trống.")
+    public void DK_6(){
+        int i=4;
+        Utils.refresh();
+        RegisterPage.formRegister(i);
+        Assert.assertTrue(RegisterPage.checkRequiredField());
+    }
+
+    @Test(priority = 7, description = "Đảm bảo không cho phép đăng ký nếu trường Email để trống.")
+    public void DK_7(){
+        int i=5;
+        Utils.refresh();
+        RegisterPage.formRegister(i);
+        Assert.assertTrue(RegisterPage.checkRequiredField());
+    }
+
+    @Test(priority = 8, description = "Đảm bảo hệ thống không cho phép nhập email dài hơn giới hạn cho phép.")
+    public void DK_8(){
+        int i=6;
+        Utils.refresh();
+        RegisterPage.formRegister(i);
+        Assert.assertTrue(RegisterPage.checkEmailInvalid());
+    }
+
+    @Test(priority = 9, description = "Đảm bảo hệ thống không cho phép mật khẩu vượt quá độ dài cho phép.")
+    public void DK_9(){
+        int i=7;
+        Utils.refresh();
+        RegisterPage.formRegister(i);
+        Assert.assertTrue(RegisterPage.checkPasswordInvalid());
+    }
+
+    @Test(priority = 10, description = "Đảm bảo hệ thống kiểm tra định dạng email đầy đủ.")
+    public void DK_10(){
+        int i=8;
+        Utils.refresh();
+        RegisterPage.formRegister(i);
+        Assert.assertTrue(RegisterPage.checkEmailInvalid());
+    }
 }
