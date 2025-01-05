@@ -99,4 +99,12 @@ public class RegisterTest extends BaseTest {
         RegisterPage.formRegister(i);
         Assert.assertTrue(RegisterPage.checkEmailInvalid());
     }
+
+    @Test(priority = 11, description = "Đảm bảo hiển thị thông báo lỗi nếu mật khẩu không chứa ký tự số.")
+    public void DK_11(){
+        int i=9;
+        Utils.refresh();
+        RegisterPage.formRegister(i);
+        Assert.assertTrue(RegisterPage.checkPasswordInvalid());
+    }
 }

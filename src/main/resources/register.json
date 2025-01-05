@@ -61,5 +61,12 @@
     "firstName": "Duc",
     "lastName": "Ta",
     "password": "12345678aA@"
+  },
+  {
+    "number": 9,
+    "email": "nguyendinhduyexample.com",
+    "firstName": "Duc",
+    "lastName": "Ta",
+    "password": "abcdefgA@"
   }
 ]
