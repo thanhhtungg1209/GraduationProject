@@ -70,9 +70,39 @@ public class LoginTest extends BaseTest {
         Assert.assertTrue(LoginPage.checkRequired());
     }
 
+    @Test(priority = 6, description = "Kiểm tra khả năng đăng nhập với địa chỉ email có chữ hoa hoặc chữ thường.")
+    public void DN_6(){
+        methodCount = 6;int i=5;
+        log.info("Starting test case: DN_6");
+        Utils.refresh();
+        LoginPage.login(i);
+        Assert.assertTrue(LoginPage.checkLoginSuccess());
+        log.info("Test case DN_6 passed");
+    }
+
+    @Test(priority = 7, description = "Kiểm tra trường hợp nhập sai mật khẩu với chữ hoa hoặc chữ thường")
+    public void DN_7(){
+        methodCount = 7;int i=6;
+        log.info("Starting test case: DN_7");
+        Utils.refresh();
+        LoginPage.login(i);
+        Assert.assertTrue(LoginPage.checkInvalidPasswordError());
+        log.info("Test case DN_7 passed");
+    }
+
+    @Test(priority = 8, description = "Kiểm tra khi người dùng nhập khoảng trắng trong trường email hoặc mật khẩu")
+    public void DN_8(){
+        methodCount = 8; int i=7;
+        log.info("Starting test case: DN_8");
+        Utils.refresh();
+        LoginPage.login(i);
+        Assert.assertTrue(LoginPage.checkLoginSuccess());
+        log.info("Test case DN_8 passed");
+    }
+
     @AfterMethod
     public void afterMethod(){
-        List<Integer> methodCounts = Arrays.asList(1);
+        List<Integer> methodCounts = Arrays.asList(1,6);
         if (methodCounts.contains(methodCount)){
             JavascriptExecutor js = (JavascriptExecutor) driver;
             WebElement logOut = driver.findElement(By.xpath("//span[normalize-space()='Log out']"));

@@ -1,22 +1,42 @@
 [
   {
+    "number": 0,
     "email": "ducth@example.com",
     "password": "12345678aA@"
   },
   {
+    "number": 1,
     "email": "invalidemail",
     "password": "12345678aA@"
   },
   {
+    "number":2,
     "email": "ducth29@example.com",
     "password": "12345"
   },
   {
+    "number": 3,
     "email": "ducth1112@example.com",
     "password": "12345"
   },
   {
+    "number": 4,
     "email": "",
     "password": ""
+  },
+  {
+    "number": 5,
+    "email": "ducth@EXample.com",
+    "password": "12345678aA@"
+  },
+  {
+    "number": 6,
+    "email": "ducth@EXample.com",
+    "password": "12345678AA@"
+  },
+  {
+    "number": 7,
+    "email": "ducth@EXample.com",
+    "password": "12345678AA@"
   }
 ]

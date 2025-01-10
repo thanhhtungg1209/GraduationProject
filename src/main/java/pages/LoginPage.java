@@ -103,4 +103,17 @@ public class LoginPage {
             return false;
         }
     }
+
+    /**
+     * Check khoa tai khoan khi nhap sai password nhieu lan
+     * @return
+     */
+    public static boolean checkLockAccount(){
+        try {
+            Utils.verifyElementDisplay("//div[contains(text(),'Your account is locked due to multiple failed login attempts. Please try again later or contact support.')]");
+            return true;
+        }catch (NoSuchElementException e){
+            return false;
+        }
+    }
 }
