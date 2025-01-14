@@ -90,9 +90,37 @@ public class AddToCartTest extends BaseTest {
         Assert.assertTrue(Utils.verifyElementDisplay("//span[contains(text(),'3')]"));
     }
 
+    @Test(priority = 7, description = "Kiểm tra giỏ hàng trống sau khi xóa tất cả các sản phẩm.")
+    public void TSPVGH_8(){
+        methodCount=8;
+        ProductDetailPage.navigateToProductDetailByLink(ProductDetailPage.linkProductDetail1);
+        ProductDetailPage.addToCart();
+        CartPage.goToCart();
+        CartPage.removeProductFromCart();
+        Utils.verifyElementDisplay("//h2[contains(text(),'Your cart is empty')]");
+    }
+
+    @Test(priority = 8,description = "Kiểm tra giỏ hàng vẫn giữ lại sản phẩm sau khi tải lại trang.")
+    public void TSPVGH_9(){
+        methodCount =9;
+        ProductDetailPage.navigateToProductDetailByLink(ProductDetailPage.linkProductDetail1);
+        ProductDetailPage.addToCart();
+        CartPage.goToCart();
+        Assert.assertTrue(Utils.verifyElementDisplay("//a[normalize-space()='"+ProductDetailPage.nameProduct1+"']"));
+        Utils.refresh();
+        Assert.assertTrue(Utils.verifyElementDisplay("//a[normalize-space()='"+ProductDetailPage.nameProduct1+"']"));
+    }
+
+    @Test(priority = 9, description = "Kiểm tra nút Add to Cart bị vô hiệu hóa khi không chọn số lượng và các đặc tính của sản phẩm")
+    public void TSPVGH_10(){
+        methodCount=10;
+        ProductDetailPage.navigateToProductDetailByLink(ProductDetailPage.linkProductDetail2);
+        Utils.isElementDisabled("//button[contains(text(),'Add to cart')]");
+    }
+
     @AfterMethod
     public void afterMethod(){
-        List<Integer> methodCounts = Arrays.asList(1,4,5,6);
+        List<Integer> methodCounts = Arrays.asList(1,4,5,6,9);
         if (methodCounts.contains(methodCount)){
             CartPage.removeProductFromCart();
         }

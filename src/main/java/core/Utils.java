@@ -102,4 +102,14 @@ public class Utils extends BaseTest{
             System.out.println("Unable to click on element: " + e.getMessage());
         }
     }
+
+    /**
+     * Phương thức kiểm tra xem phần tử có bị vô hiệu hóa hay không
+     * @param element
+     * @return
+     */
+    public static boolean isElementDisabled(String element){
+        return !driver.findElement(By.xpath(element)).isEnabled();
+        // Trả về true nếu phần tử bị vô hiệu hóa, false nếu không
+    }
 }
