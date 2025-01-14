@@ -88,6 +88,7 @@ public class LogoutTest extends BaseTest {
         driver.navigate().back();
         Assert.assertEquals(driver.getTitle(),"Home Page");
     }
+
     @AfterMethod
     public void afterMethod(){
         List<Integer> methodCounts = Arrays.asList(4);

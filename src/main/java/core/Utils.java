@@ -3,6 +3,8 @@ package core;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -77,6 +79,27 @@ public class Utils extends BaseTest{
             return true;
         }catch (NoSuchElementException e){
             return false;
+        }
+    }
+
+    /**
+     * Hover qua element
+     * @param element
+     */
+    public static void hoverOverElement(String element){
+        Actions actions = new Actions(driver);
+        actions.moveToElement(driver.findElement(By.xpath(element))).perform();
+    }
+
+    /**
+     * Click element
+     * @param element
+     */
+    public static void clickOnElement(String element){
+        try {
+            driver.findElement(By.xpath(element)).click();
+        } catch (Exception e) {
+            System.out.println("Unable to click on element: " + e.getMessage());
         }
     }
 }

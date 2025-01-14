@@ -1,5 +1,7 @@
 import core.BaseTest;
 import core.Utils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -68,5 +70,28 @@ public class SearchTest extends BaseTest {
         HomePage.searchName(i);
         Assert.assertTrue(HomePage.isSearchSuccessfulWithValidInput(3));
         Assert.assertTrue(HomePage.isSearchSuccessfulWithValidInput(7));
+    }
+
+    @Test(priority = 8, description = "Kiểm tra hiển thị đúng trang danh mục khi click vào menu.")
+    public void TKSP_8(){
+        methodCount=8; int i=7;
+        Utils.refresh();
+        Utils.hoverOverElement("//a[contains(text(),'Women')]");
+        Utils.clickOnElement("//a[contains(text(),'Jackets')]");
+        Utils.verifyElementDisplay("//h2[contains(text(),'Jackets')]");
+    }
+
+    @Test(priority = 9, description = "Đảm bảo hệ thống bỏ qua khoảng trắng khi tìm kiếm")
+    public void TKSP_9(){
+        methodCount=9; int i=8;
+        HomePage.searchName(i);
+        Assert.assertTrue(HomePage.isSearchSuccessfulWithValidInput(i));
+    }
+
+    @Test(priority = 10, description = "Đảm bảo hệ thống xử lý khi tìm kiếm mà không nhập từ khóa")
+    public void TKSP_10(){
+        methodCount=10; int i=9;
+        HomePage.searchName(i);
+        Assert.assertTrue(HomePage.isSearchSuccessfulWithInValidInput());
     }
 }
