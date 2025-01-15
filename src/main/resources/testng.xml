@@ -13,6 +13,7 @@
             <class name="SearchTest"/>
             <class name="AddToCartTest"/>
             <class name="LogoutTest"/>
+            <class name="HomeTest"/>
         </classes>
     </test>
 
