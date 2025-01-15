@@ -1,9 +1,6 @@
 package core;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -119,7 +116,18 @@ public class Utils extends BaseTest{
      */
     public static void scrollToElement(String element) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", driver.findElement(By.xpath(element)));
+        WebElement locator = driver.findElement(By.xpath(element));
+        js.executeScript("arguments[0].scrollIntoView(true);", locator);
         sleep(2);
     }
+
+    /**
+     * Method cuộn xuống cuối trang
+     */
+    public static void scrollToBottom() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        // Cuộn xuống cuối trang bằng cách sử dụng scrollTo()
+        js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+    }
+
 }

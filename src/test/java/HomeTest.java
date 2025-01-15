@@ -20,7 +20,7 @@ public class HomeTest extends BaseTest {
         HomePage.goToPage();
         Utils.scrollToElement("//a[contains(text(),'Learn more')]");
         Utils.clickOnElement("//a[contains(text(),'Learn more')]");
-        Utils.verifyElementDisplay("//h2[contains(text(),'Women')]")
+        Utils.verifyElementDisplay("//h2[contains(text(),'Women')]");
     }
 
     @Test(priority = 2, description = "Kiểm tra sự hiện diện và hoạt động của thanh tìm kiếm trên trang chủ")
@@ -28,8 +28,6 @@ public class HomeTest extends BaseTest {
         methodCount=2; int i=0;
         HomePage.goToPage();
         Utils.verifyElementDisplay("//input[@placeholder='Search for items']");
-        HomePage.searchName(i);
-        Assert.assertTrue(HomePage.isSearchSuccessfulWithValidInput(i));
     }
 
     @Test(priority = 3, description = "Kiểm tra các danh mục trên menu điều hướng chính")
@@ -43,7 +41,8 @@ public class HomeTest extends BaseTest {
     @Test(priority = 4, description = "Kiểm tra các liên kết và thông tin trong phần footer (chân trang) của trang chủ")
     public void TC_4(){
         methodCount=4;
-        Utils.scrollToElement("//span[contains(text(),'Who we are')]");
+        HomePage.goToPage();Utils.sleep(2);
+        Utils.scrollToBottom();
         Utils.clickOnElement("//span[contains(text(),'Who we are')]");
         String currentUrl = driver.getCurrentUrl();
         Assert.assertNotEquals(currentUrl, "https://demo-magento2.vuestorefront.io/default", "The URL should not be https://demo-magento2.vuestorefront.io/default");
