@@ -1,9 +1,9 @@
 package core;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -111,5 +111,15 @@ public class Utils extends BaseTest{
     public static boolean isElementDisabled(String element){
         return !driver.findElement(By.xpath(element)).isEnabled();
         // Trả về true nếu phần tử bị vô hiệu hóa, false nếu không
+    }
+
+    /**
+     * Method cuộn đến phần tử bằng cách sử dụng JavascriptExecutor
+     * @param element
+     */
+    public static void scrollToElement(String element) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", driver.findElement(By.xpath(element)));
+        sleep(2);
     }
 }
