@@ -69,15 +69,18 @@ public class Utils extends BaseTest{
      * @param elementXpath
      * @return
      */
-    public static boolean verifyElementDisplay(String elementXpath){
+    public static boolean verifyElementDisplay(String elementXpath) {
         try {
-            Utils.waitForElementVisible(By.xpath(""+elementXpath+""),10);
-            driver.findElement(By.xpath(""+elementXpath+"")).isDisplayed();
+            Utils.waitForElementVisible(By.xpath(elementXpath), 10); // Chờ tối đa 10s
             return true;
-        }catch (NoSuchElementException e){
+        } catch (TimeoutException | NoSuchElementException e) {
+            return false;
+        } catch (Exception e) {
+            e.printStackTrace();
             return false;
         }
     }
+
 
     /**
      * Hover qua element

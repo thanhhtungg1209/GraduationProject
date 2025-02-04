@@ -43,13 +43,4 @@ public class MyWishlistPage {
         Utils.clickOnElement("//button[contains(text(),'Remove from Wishlist')]");
         Utils.sleep(2);
     }
-
-    public static boolean isProductInWishlist(int i){
-        try{
-            Utils.verifyElementDisplay("//span[contains(text(),'"+myWishlistConfigs[i].getName()+"')]");
-            return true;
-        }catch (NoSuchElementException e){
-            return false;
-        }
-    }
 }

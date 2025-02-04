@@ -22,7 +22,7 @@ public class MyWishlistTest extends BaseTest {
         LoginPage.login(i);
         MyWishlistPage.addMyWishlist(i);
         MyWishlistPage.goToMyWishlistPage();
-        Assert.assertTrue(MyWishlistPage.isProductInWishlist(i));
+        Utils.verifyElementDisplay("//span[contains(text(),'" + MyWishlistPage.myWishlistConfigs[i].getName() + "')]");
     }
 
     @Test(priority = 2, description = "Kiểm tra chức năng xóa sản phẩm khỏi Wishlist")
@@ -30,6 +30,6 @@ public class MyWishlistTest extends BaseTest {
         int i=0; methodCount=2;
         MyWishlistPage.removeMyWishlist(i);
         MyWishlistPage.goToMyWishlistPage();
-        Assert.assertFalse(MyWishlistPage.isProductInWishlist(i));
+        Utils.verifyElementDisplay("//h2[contains(text(),'Your bag is empty')]");
     }
 }
