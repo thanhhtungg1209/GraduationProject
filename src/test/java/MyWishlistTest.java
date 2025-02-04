@@ -1,5 +1,6 @@
 import core.BaseTest;
 import core.Utils;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.LoginPage;
@@ -16,11 +17,19 @@ public class MyWishlistTest extends BaseTest {
 
     @Test(priority = 1,description = "Kiểm tra chức năng thêm sản phẩm vào danh sách yêu thích")
     public void MW_1(){
-        int i=0;
+        int i=0; methodCount=1;
         LoginPage.goToPage();
         LoginPage.login(i);
         MyWishlistPage.addMyWishlist(i);
         MyWishlistPage.goToMyWishlistPage();
-        Utils.verifyElementDisplay("//span[contains(text(),'"+MyWishlistPage.myWishlistConfigs[i].getName()+"')]");
+        Assert.assertTrue(MyWishlistPage.isProductInWishlist(i));
+    }
+
+    @Test(priority = 2, description = "Kiểm tra chức năng xóa sản phẩm khỏi Wishlist")
+    public void MW_2(){
+        int i=0; methodCount=2;
+        MyWishlistPage.removeMyWishlist(i);
+        MyWishlistPage.goToMyWishlistPage();
+        Assert.assertFalse(MyWishlistPage.isProductInWishlist(i));
     }
 }

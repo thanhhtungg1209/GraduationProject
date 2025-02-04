@@ -3,6 +3,7 @@ package pages;
 import config.ConfigManager;
 import core.Config;
 import core.Utils;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 
 public class MyWishlistPage {
@@ -29,5 +30,26 @@ public class MyWishlistPage {
         Utils.scrollToElement("//button[normalize-space()='Add to Wishlist']");
         Utils.clickOnElement("//button[normalize-space()='Add to Wishlist']");
         Utils.sleep(2);
+    }
+
+    /**
+     * remove my wishlist
+     * @param i
+     */
+    public static void removeMyWishlist(int i){
+        driver.get(myWishlistConfigs[i].getUrl());
+        Utils.sleep(2);
+        Utils.scrollToElement("//button[contains(text(),'Remove from Wishlist')]");
+        Utils.clickOnElement("//button[contains(text(),'Remove from Wishlist')]");
+        Utils.sleep(2);
+    }
+
+    public static boolean isProductInWishlist(int i){
+        try{
+            Utils.verifyElementDisplay("//span[contains(text(),'"+myWishlistConfigs[i].getName()+"')]");
+            return true;
+        }catch (NoSuchElementException e){
+            return false;
+        }
     }
 }
