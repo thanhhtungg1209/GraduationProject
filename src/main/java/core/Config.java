@@ -7,8 +7,25 @@ package core;
  */
 
 public class Config {
-    private String baseUrl;
-    private String email,firstName,lastName,password;
+    private String baseUrl,url;
+    private String email,name,firstName,lastName,password;
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     private String value,price,description;
 
     public String getDescription() {
